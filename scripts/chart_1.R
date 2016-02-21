@@ -15,8 +15,8 @@ chart_1 <- function(data) {
                                 What.operating.system.do.you.typically.use.)
   
   # Creating proper names for relevant data
-  chart_data <- chart_data %>% rename("Class Standing"              = What.is.your.current.class.standing., 
-                                      "Operating System"            = What.operating.system.do.you.typically.use.)
+  chart_data <- chart_data %>% rename("Class Standing"   = What.is.your.current.class.standing., 
+                                      "Operating System" = What.operating.system.do.you.typically.use.)
   
   levels(chart_data$`Operating System`)[levels(chart_data$`Operating System`)
                                         =="Other: Windows at home, Linux (Ubuntu) at work"] <- "Other"
