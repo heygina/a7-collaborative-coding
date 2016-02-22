@@ -57,7 +57,8 @@ chart_1 <- function(data) {
   ) %>% layout(barmode = "stack",
                xaxis = list(title = "Class Standing"),
                yaxis = list(title = "Number of Students"),
-               title = "What Operating System Does Each Class Use?")
+               title = "What Operating System Does Each Class Use?") %>% 
+  return()
 } 
 
 
