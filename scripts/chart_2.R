@@ -29,7 +29,8 @@ chart_2 <- function(data) {
     title = "Number of Countries Visited by Class Standing",
     xaxis = list(title = "Class"),
     yaxis = list(title = "Countries Visited")
-  )
+  ) %>% 
+    ret
 }
 
 #chart_2(data)
