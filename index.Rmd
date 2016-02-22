@@ -6,8 +6,8 @@ output: html_document
 <http://rmarkdown.rstudio.com>.
 
 ```{r, echo=FALSE, message=FALSE}
-source("scripts/.R")
-data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+#data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+#source("scripts/analysis.R")
 ```
 #  Write a short summary paragraph that includes information calculated by your summary information function
 
