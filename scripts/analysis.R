@@ -1,5 +1,5 @@
 #data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
-#library(dplyr)
+library(dplyr)
 info_function <- function(data) {
   data <- data %>% rename(Class_Standing = What.is.your.current.class.standing., 
                           Operating_System = What.operating.system.do.you.typically.use.,
