@@ -30,7 +30,7 @@ chart_2 <- function(data) {
     xaxis = list(title = "Class"),
     yaxis = list(title = "Countries Visited")
   ) %>% 
-    ret
+    return()
 }
 
 #chart_2(data)

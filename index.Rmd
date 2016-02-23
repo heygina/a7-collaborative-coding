@@ -1,26 +1,41 @@
 ---
-title: "index"
-output: html_document
+#title: "index"
+#output: html_document
 ---
+## David Yuan, Gina Lee, Jared Praino, Kyle Wistrand, INFO 498F, Instructor: Michael Freeman, TA: Jordan Hand
 
-<http://rmarkdown.rstudio.com>.
+## Assignment 7: Collaborative Coding
 
 ```{r, echo=FALSE, message=FALSE}
-#data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
-#source("scripts/analysis.R")
-```
-#  Write a short summary paragraph that includes information calculated by your summary information function
+library(knitr)
+library(plotly)
 
+#Read in data from outside source
+data <- read.csv("https://raw.githubusercontent.com/INFO-498F/a7-survey-data/master/intro_survey_data.csv")
+#Read R code from analysis.R
+source("scripts/analysis.R")
+#Use code from analysis.R to help provide summary data
+analysis <- info_function(data)
+```
+### ------------------- Summary Information
+At the beginning of the quarter, every student was asked to fill out a brief survey consisting of `r analysis$NumCols` questions about their priod experiences within computer programming. Of these students, `r analysis$Freshman` were college freshmen, `r analysis$Sophomore` were sophomores, `r analysis$Junior` were juniors, and `r analysis$Senior` were seniors. Out of this group, a great majority, `r round(analysis$RBeginner/(analysis$RBeginner + analysis$RFewTimes + analysis$RIntermediate) * 100, digits = 1)`% have had no prior experience with programming in R. It also seemed like this was a class most students decided to take in preparation for applying for the Informatics major, with `r round(analysis$YesApplying / (analysis$YesApplying + analysis$MaybeApplying + analysis$NoApplying) * 100, digits = 1)`% of students surveyed expressed interest in applying for the major at the end of Spring quarter. While this survey only shows information on the first day of class, and thus has no data from the class as it progressed through the quarter, we are certain that all `r analysis$Freshman + analysis$Sophomore + analysis$Junior + analysis$Senior` students have thoroughly enjoyed this class (even the `r analysis$Neither` students who said they liked neither dogs nor cats). 
           
-Chart 1
+### ------------------- Chart 1
 ```{r, echo=FALSE, message=FALSE}
-
+#Read in R code from chart_1.R
+source("scripts/chart_1.R")
+#Use code from chart_1.R to help create the first chart
+chart1 <- chart_1(data)
 ```
+One of the most interesting questions students were asked in the initial survey, was which operating system they preferred to use. As such, our first chart is one that uses a bar graph to show the number of students that use each operating system, based on class standing.
+`r chart1`
 
-Chart 2
+### ------------------- Chart 2
 ```{r, echo=FALSE, message=FALSE}
-
-
+#Read in R code from chart_2.R
+source("scripts/chart_2.R")
+#Use code from chart_2.R to help create the second chart
+chart2 <- chart_2(data)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Another great question asked on the survey was the number of countries each student had visited. Our second chart uses a box-and-whisker chart to depict the number of countries each students had visited, also based on class standing.
+`r chart2`
